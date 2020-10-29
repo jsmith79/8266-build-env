@@ -1,0 +1,32 @@
+#!/bin/sh
+echo "GENERAL SYSTEM INFORMATION"
+/usr/bin/screenfetch
+echo
+echo "SYSTEM DISK USAGE"
+export TERM=xterm; inxi -D
+echo
+echo "instructions below are from https://github.com/RavenSystem/esp-homekit-devices/wiki/Build-Instructions "
+echo
+echo "Build:"
+echo "make -j8 -C devices/HAA all"
+echo
+echo "Upload firmware to ESP and then run it:"
+echo "make -j8 -C devices/HAA test"
+echo
+echo "Flash firmware:"
+echo "make -j8 -C devices/HAA flash"
+echo
+echo "Show UART output of connected device (Same as capture log):"
+echo "make -j8 -C devices/HAA monitor"
+echo
+echo "Clean and build from scratch:"
+echo "make -j8 -C devices/HAA rebuild"
+echo
+echo "Erase flash:"
+echo "make -C devices/HAA erase_flash"
+echo
+echo 
+echo "source files are located at ~/build/esp-homekit-devices/"
+echo
+echo "'/vagrant' is shared with the host operating system."
+echo
